@@ -1,0 +1,8 @@
+controller:
+  progressDeadlineSeconds: 30
+  config:
+    use-forwarded-headers: "true" #this is needed for passing properly scheme and client IP
+  ingressClassResource:
+    default: true
+  service:
+    type: ClusterIP #disable LoadBalancer 

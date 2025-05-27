@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ingress-test
+  namespace: test-ingress
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ingress-test
+  template:
+    metadata:
+      labels:
+        app: ingress-test
+    spec:
+      containers:
+        - name: httpbin
+          image: mccutchen/go-httpbin
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop: ["ALL"]
+            runAsNonRoot: true
+            runAsUser: 1000
+            runAsGroup: 1000
+            seccompProfile:
+              type: RuntimeDefault
+          ports:
+            - containerPort: 8080
+              name: http
