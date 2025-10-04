@@ -7,7 +7,7 @@ kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/downloa
 
 # install ingress-nginx
 helm upgrade --install --namespace=ingress-nginx --create-namespace \
-  ingress-nginx ingress-nginx --repo https://kubernetes.github.io/ingress-nginx --version 4.12.2 \
+  ingress-nginx ingress-nginx --repo https://kubernetes.github.io/ingress-nginx --version 4.13.3 \
   --values nginx-ingress-values.yaml --timeout 5m --wait
 
 # install envoy-gateway
