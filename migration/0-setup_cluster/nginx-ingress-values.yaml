@@ -1,6 +1,8 @@
 controller:
   progressDeadlineSeconds: 30
   config:
-    use-forwarded-headers: "true" #this is needed for passing properly scheme and client IP
+    use-forwarded-headers: "true" #this is needed for passing properly scheme and client IP (when behind Apii Gateway controller)
   ingressClassResource:
     default: true
+  service:
+    externalTrafficPolicy: Local
