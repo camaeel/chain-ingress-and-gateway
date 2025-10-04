@@ -42,8 +42,8 @@ create kind cluster: kind create cluster
 # Caveats 
 
 ## Lima-vm
- 
-If running with cloud-provider-kind due to https://github.com/lima-vm/lima/issues/4138 it may be needed to switch to SSH portForwarder:
+
+If running with cloud-provider-kind due to https://github.com/lima-vm/lima/issues/4138 it may be needed to switch to SSH portForwarder before starting lima:
 ```shell
 export LIMA_SSH_PORT_FORWARDER=true
 ```
