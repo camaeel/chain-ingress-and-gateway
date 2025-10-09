@@ -1,0 +1,17 @@
+apiVersion: gateway.networking.k8s.io/v1beta1
+kind: HTTPRoute
+metadata:
+  name: "default"
+  namespace: ingress-nginx
+spec:
+  parentRefs:
+    - name: eg
+      namespace: envoy-gateway-system
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: "/"
+      backendRefs:
+        - name: "ingress-nginx-controller"
+          port: 80

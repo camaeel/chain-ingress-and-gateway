@@ -30,3 +30,5 @@ echo LB_IP=$LB_IP
 
 echo "Add LB_IP to /etc/hosts. Execute:"
 echo "echo $LB_IP \"demo.example.com\" | sudo tee -a /etc/hosts"
+
+kubectl apply -f ns.yaml
